@@ -11,8 +11,8 @@ wget https://raw.githubusercontent.com/vega02/script/main/postfix2/client_checks
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/rbl_whitelist
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/10-auth.conf
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/10-mail.conf
+cd ..
 
-ntpdate ntp.ntu.edu.tw
 apt-get update
 
 echo "postfix postfix/mailname string ezconn.tw" | debconf-set-selections
