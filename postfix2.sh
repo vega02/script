@@ -1,4 +1,6 @@
 #!/bin/sh
+mkdir postfix2
+cd postfix2
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/main.cf
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/master.cf
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/smtpd.conf
@@ -47,4 +49,4 @@ cp ./postfix2/10-auth.conf /etc/dovecot/conf.d/
 /etc/init.d/postfix restart
 /etc/init.d/dovecot restart
 
-cp ./postfix2/updatetime /etc/cron.hourly/
+cd ..
