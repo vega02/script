@@ -1,3 +1,4 @@
+cd ~
 echo "export PS1='\[\033[1;31m\]\u@\h:\w\$ \[\033[0m\]'" >> ~/.bashrc;
 echo "alias ls='ls \$LS_OPTIONS -A'" >> ~/.bashrc;
 echo "alias ll='ls \$LS_OPTIONS -lA'" >> ~/.bashrc;
