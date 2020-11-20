@@ -1,0 +1,1 @@
+/\.dynamic\./ REJECT We can't allow dynamic IP to relay!

@@ -1,0 +1,2 @@
+/^\s*Content-(Disposition|Type).*name\s*=\s*"?(.+\.(exe|msi))"?\s*$/ REJECT Files attached to emails that contain or end in "$3" are prohibited on this server as they may contain viruses. The file named "$2" was rejected.
+/name=[^>]*\.(bat|com|exe)/ REJECT
