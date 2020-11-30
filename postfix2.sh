@@ -19,7 +19,7 @@ echo "postfix postfix/mailname string ezconn.tw" | debconf-set-selections
 echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
 apt install -y postfix
 
-apt-get --assume-yes install dovecot-core dovecot-imapd dovecot-pop3d sasl2-bin procmail
+apt-get --assume-yes install dovecot-core dovecot-imapd dovecot-pop3d sasl2-bin procmail libsasl2-modules
 
 #postfix
 mv /etc/postfix/main.cf /etc/postfix/main.cf.old
