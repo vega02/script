@@ -11,7 +11,10 @@ echo "alias aptr='apt-get remove'" >> ~/.bashrc;
 echo "alias aptu='apt-get update'" >> ~/.bashrc;
 echo "alias aptc='apt-get clean'" >> ~/.bashrc;
 echo "alias apts='apt-cache search'" >> ~/.bashrc;
-echo "alias n='netstat -ntl'" >> ~/.bashrc;
+echo "alias n='netstat -antl'" >> ~/.bashrc;
 echo "alias df='df -BMB'" >> ~/.bashrc;
 echo "TZ='Asia/Taipei'; export TZ" >> ~/.bashrc;
 echo "cd ~"
+
+echo "colo desert" >> ~/.vimrc
+echo "syntax on" >> ~/.vimrc
