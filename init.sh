@@ -1,4 +1,12 @@
 cd ~
+if [ ! -d $HOME"/package" ]
+then
+ echo "~/package/ not exists, make one"
+ mkdir ~/package
+fi
+cd ~/package
+
+cd ~
 echo "export PS1='\[\033[1;31m\]\u@\h:\w\$ \[\033[0m\]'" >> ~/.bashrc;
 echo "alias ls='ls \$LS_OPTIONS -A'" >> ~/.bashrc;
 echo "alias ll='ls \$LS_OPTIONS -lA'" >> ~/.bashrc;
@@ -18,3 +26,5 @@ echo "cd ~"
 
 echo "colo desert" >> ~/.vimrc
 echo "syntax on" >> ~/.vimrc
+
+apt-get install ssh ftp ntpdate
