@@ -1,0 +1,3 @@
+#!/bin/sh
+ntpdate ntp.ntu.edu.tw
+ntpdate ntp.ntu.edu.tw
