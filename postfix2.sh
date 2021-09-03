@@ -1,4 +1,13 @@
 #!/bin/sh
+
+cd ~
+if [ ! -d $HOME"/package" ]
+then
+ echo "~/package/ not exists, make one"
+ mkdir ~/package
+fi
+cd ~/package
+
 mkdir postfix2
 cd postfix2
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/main.cf
