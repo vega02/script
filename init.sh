@@ -5,6 +5,7 @@ then
  mkdir ~/package
 fi
 cd ~/package
+wget https://raw.githubusercontent.com/vega02/script/main/postfix2/main.cf
 
 cd ~
 echo "export PS1='\[\033[1;31m\]\u@\h:\w\$ \[\033[0m\]'" >> ~/.bashrc;
@@ -28,3 +29,4 @@ echo "colo desert" >> ~/.vimrc
 echo "syntax on" >> ~/.vimrc
 
 apt-get install ssh ftp ntpdate
+
