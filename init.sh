@@ -4,8 +4,6 @@ then
  echo "~/package/ not exists, make one"
  mkdir ~/package
 fi
-cd ~/package
-wget https://raw.githubusercontent.com/vega02/script/main/postfix2/main.cf
 
 cd ~
 echo "export PS1='\[\033[1;31m\]\u@\h:\w\$ \[\033[0m\]'" >> ~/.bashrc;
@@ -28,5 +26,11 @@ echo "cd ~"
 echo "colo desert" >> ~/.vimrc
 echo "syntax on" >> ~/.vimrc
 
-apt-get install ssh ftp ntpdate
+apt-get install vim ssh ftp ntpdate
 
+cd ~/package
+wget https://raw.githubusercontent.com/vega02/script/main/updatetime
+
+echo "tzdata tzdta/Areas select Asia" | debconf-set-selections
+echo "tzdata tzdta/City select Taipei" | debconf-set-selections
+dpkg-reconfigure -f noninteractive tzdata
