@@ -30,7 +30,3 @@ apt-get install vim ssh ftp ntpdate
 
 cd ~/package
 wget https://raw.githubusercontent.com/vega02/script/main/updatetime
-
-echo "tzdata tzdata/Area select Asia" | debconf-set-selections
-echo "tzdata tzdata/City select Taipei" | debconf-set-selections
-dpkg-reconfigure -f noninteractive tzdata
