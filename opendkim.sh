@@ -8,8 +8,8 @@ then
 fi
 cd ~/package
 
-mkdir dkim
-cd dkim
+mkdir opendkim
+cd opendkim
 
 apt-get update
 apt-get --assume-yes install opendkim opendkim-tools
