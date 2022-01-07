@@ -18,6 +18,7 @@ adduser postfix opendkim
 #gen key
 #opendkim-genkey -t -b 2048 -s dkim -d domain.com.tw
 
+wget https://raw.githubusercontent.com/vega02/script/main/opendkim/README
 wget https://raw.githubusercontent.com/vega02/script/main/opendkim/opendkim
 wget https://raw.githubusercontent.com/vega02/script/main/opendkim/opendkim.conf
 
