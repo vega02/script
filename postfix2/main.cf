@@ -73,4 +73,11 @@ smtpd_sasl_auth_enable = yes
 broken_sasl_auth_clients = yes
 
 #header_checks = regexp:/etc/postfix/header_checks
+#body_checks = regexp:/etc/postfix/body_checks
 #mime_header_checks = regexp:/etc/postfix/mime_header_checks
+
+#postmap /etc/postfix/sender_bcc_maps
+#sender_bcc_maps = hash:/etc/postfix/sender_bcc_maps
+
+#postmap /etc/postfix/recipient_bcc_maps
+#recipient_bcc_maps = hash:/etc/postfix/recipient_bcc_maps
