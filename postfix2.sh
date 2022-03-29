@@ -16,6 +16,7 @@ wget https://raw.githubusercontent.com/vega02/script/main/postfix2/smtpd.conf
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/saslauthd
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/mime_header_checks
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/header_checks
+wget https://raw.githubusercontent.com/vega02/script/main/postfix2/body_checks
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/client_checks
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/rbl_whitelist
 wget https://raw.githubusercontent.com/vega02/script/main/postfix2/10-auth.conf
