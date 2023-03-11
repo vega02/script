@@ -50,7 +50,6 @@ apt-get update \
   && ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
   && apt install -y tzdata \
   && dpkg-reconfigure --frontend noninteractive tzdata \
-  && chmod 755 /app/startup.sh \
   && apt install -y mc \
   && groupadd -g 5000 vmail \
   && useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail \
@@ -86,7 +85,7 @@ cp ./mail.mysql/smtpd.conf /etc/postfix/sasl/
 
 cp ./mail.mysql/saslauthd /etc/default/
 cp ./mail.mysql/jail.local /etc/fail2ban/
-cp ./mail.mysql/mailname /etc/
+#cp ./mail.mysql/mailname /etc/
 
 #cp ./mail.mysql/mime_header_checks /etc/postfix/
 #cp ./mail.mysql/header_checks /etc/postfix/
