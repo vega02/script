@@ -21,6 +21,7 @@ wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/main.cf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/master.cf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/mysql-email2email.cf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/mysql-virtual-alias-maps.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/mysql-virtual-mailbox-domains.cf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/smtpd.conf
 
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/saslauthd
