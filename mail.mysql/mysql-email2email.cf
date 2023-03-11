@@ -1,0 +1,5 @@
+user = dovecot
+password = dovecot
+hosts = 192.168.20.250
+dbname = dovecot
+query = SELECT CONCAT(username, '@', domain) AS email FROM users WHERE username='%u' AND domain = '%d'
