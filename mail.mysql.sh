@@ -84,7 +84,7 @@ cp ./mail.mysql/mysql-virtual-alias-maps.cf /etc/postfix/
 cp ./mail.mysql/mysql-virtual-mailbox-domains.cf /etc/postfix/
 cp ./mail.mysql/smtpd.conf /etc/postfix/sasl/
 
-cp ./mail.mysql/saslauthd /etc/default/saslauthd/
+cp ./mail.mysql/saslauthd /etc/default/
 cp ./mail.mysql/jail.local /etc/fail2ban/
 cp ./mail.mysql/mailname /etc/
 
