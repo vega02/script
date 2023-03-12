@@ -10,6 +10,9 @@ cd ~/package
 
 mkdir mail.mysql
 cd mail.mysql
+
+wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/init.sql
+
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/dovecot-sql.conf.ext
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/10-auth.conf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/10-mail.conf
@@ -27,6 +30,8 @@ wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/smtpd.conf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/saslauthd
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/jail.local
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/mailname
+
+
 
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/mime_header_checks
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/header_checks
