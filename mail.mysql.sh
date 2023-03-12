@@ -107,7 +107,7 @@ cp ./mail.mysql/jail.local /etc/fail2ban/
 
 mysql < ./mail.mysql/init.sql
 
-apt install php
-apt install phpmyadmin
+apt install -y php
+apt install -y phpmyadmin
 
 cd ..
