@@ -41,7 +41,7 @@ apt-get update
 
 apt-get update \
   && apt install -y rsyslog vim net-tools iptables \
-  && echo "postfix postfix/mailname string ezconn.tw" | debconf-set-selections \
+  && echo "postfix postfix/mailname string yourdoamin.com" | debconf-set-selections \
   && echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
   && apt install -y postfix fail2ban \
   && apt install -y dovecot-core dovecot-imapd dovecot-pop3d sasl2-bin procmail libsasl2-modules \
@@ -50,6 +50,7 @@ apt-get update \
   && ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
   && apt install -y tzdata \
   && dpkg-reconfigure --frontend noninteractive tzdata \
+  && apt install -y certbot python3-certbot-apache
   && apt install -y mc \
   && groupadd -g 5000 vmail \
   && useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail \
