@@ -56,6 +56,7 @@ apt-get update \
   && apt install -y tzdata \
   && dpkg-reconfigure --frontend noninteractive tzdata \
   && apt install -y certbot python3-certbot-apache \
+  && apt install -y mariadb-server \
   && apt install -y mc \
   && groupadd -g 5000 vmail \
   && useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail \
