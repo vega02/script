@@ -103,5 +103,8 @@ cp ./mail.mysql/jail.local /etc/fail2ban/
 /etc/init.d/saslauthd restart
 /etc/init.d/postfix restart
 /etc/init.d/dovecot restart
+/etc/init.d/mariadb start
+
+mysql < init.sql
 
 cd ..
