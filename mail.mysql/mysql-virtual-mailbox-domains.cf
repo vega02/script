@@ -1,5 +1,5 @@
 user = dovecot
 password = dovecot
-hosts = 192.168.20.250
+hosts = localhost
 dbname = dovecot
 query = SELECT 1 FROM users WHERE domain = '%s'
