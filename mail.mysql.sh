@@ -48,6 +48,7 @@ apt-get update \
   && apt install -y rsyslog vim net-tools iptables \
   && echo "postfix postfix/mailname string yourdoamin.com" | debconf-set-selections \
   && echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
+  
   && apt install -y postfix fail2ban \
   && apt install -y dovecot-core dovecot-imapd dovecot-pop3d sasl2-bin procmail libsasl2-modules \
   && apt install -y dovecot-mysql dovecot-lmtpd postfix-mysql \
@@ -107,7 +108,10 @@ cp ./mail.mysql/jail.local /etc/fail2ban/
 
 mysql < ./mail.mysql/init.sql
 
+echo "phpmyadmin phpmyadmin/dbconfig-install boolean false" | debconf-set-selections
+echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
 apt install -y php
 apt install -y phpmyadmin
+/etc/init.d/apache2 restart
 
 cd ..
