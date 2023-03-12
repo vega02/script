@@ -48,7 +48,6 @@ apt-get update \
   && apt install -y rsyslog vim net-tools iptables \
   && echo "postfix postfix/mailname string yourdoamin.com" | debconf-set-selections \
   && echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
-  
   && apt install -y postfix fail2ban \
   && apt install -y dovecot-core dovecot-imapd dovecot-pop3d sasl2-bin procmail libsasl2-modules \
   && apt install -y dovecot-mysql dovecot-lmtpd postfix-mysql \
