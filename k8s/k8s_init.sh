@@ -2,6 +2,10 @@
 #
 
 swapoff -a
+free -m
+cp /etc/fstab /etc/fstab.bak
+cat /etc/fstab.bak |grep -v swap > /etc/fstab
+
 modprobe overlay
 modprobe br_netfilter
 echo 'overlay' >> /etc/modules
@@ -12,6 +16,9 @@ cat <<EOF > /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
+
+echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf
+sysctl -p
 
 sudo apt-get update 
 sudo apt-get install curl ntpdate
