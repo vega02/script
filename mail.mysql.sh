@@ -58,6 +58,7 @@ apt-get update \
   && apt install -y certbot python3-certbot-apache \
   && apt install -y mariadb-server \
   && apt install -y mc \
+  && apt install -y certbot python3-certbot-apache \
   && groupadd -g 5000 vmail \
   && useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail \
   && mkdir /var/mail/vhosts \
@@ -67,7 +68,6 @@ apt-get update \
   && touch /etc/postfix/mysql-email2email.cf \
   && touch /etc/postfix/mysql-virtual-alias-maps.cf \
   && touch /etc/postfix/mysql-virtual-mailbox-domains.cf
-
 #postfix
 mv /etc/postfix/main.cf /etc/postfix/main.cf.old
 mv /etc/postfix/master.cf /etc/postfix/master.cf.old
