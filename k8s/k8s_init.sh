@@ -1,3 +1,6 @@
+#!/bin/bash
+#
+
 swapoff -a
 free -m
 cp /etc/fstab /etc/fstab.bak
@@ -18,8 +21,10 @@ echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf
 sysctl -p
 
 sudo apt-get update 
-sudo apt-get install curl
+sudo apt-get install curl ntpdate
 sudo apt-get install -y apt-transport-https
+
+
 
 curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list

@@ -17,6 +17,8 @@ wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/dovecot-sql
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/10-auth.conf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/10-mail.conf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/10-master.conf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/10-ssl.conf
+
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/auth-sql.conf.ext
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/auth-static.conf.ext
 
