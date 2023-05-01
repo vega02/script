@@ -13,10 +13,12 @@ CREATE TABLE `users` (
   `username` varchar(128) NOT NULL,
   `domain` varchar(128) NOT NULL,
   `password` varchar(64) NOT NULL,
-  `active` char(1) NOT NULL DEFAULT 'Y'
+  `active` tinyint(1) NOT NULL DEFAULT 1,
+  `uid` INT(11) DEFAULT '5000',
+  `gid` INT(11) DEFAULT '5000'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert  into `users`(`username`,`domain`,`password`,`active`) values ('vega','ezconn.tw','8253dee45bd36758d868cc8a45677521','Y');
+insert  into `users`(`username`,`domain`,`password`,`active`) values ('vega','ezconn.tw','dfa20cc6b1e1b18e23b8f08616cde10d',1);
 
 CREATE USER 'dovecot'@'%' IDENTIFIED BY 'dovecot';
 GRANT ALL ON dovecot.* TO 'dovecot'@'%';
