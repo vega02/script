@@ -15,6 +15,7 @@ echo "alias u='cd ..'" >> ~/.bashrc;
 
 echo "alias aptg='apt-get install'" >> ~/.bashrc;
 echo "alias aptr='apt-get remove'" >> ~/.bashrc;
+echo "alias aptpr='apt autoremove --purge'" >> ~/.bashrc;
 echo "alias aptu='apt-get update'" >> ~/.bashrc;
 echo "alias aptc='apt-get clean'" >> ~/.bashrc;
 echo "alias apts='apt-cache search'" >> ~/.bashrc;
