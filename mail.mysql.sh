@@ -84,6 +84,7 @@ cp ./mail.mysql/dovecot-sql.conf.ext /etc/dovecot/
 cp ./mail.mysql/10-auth.conf /etc/dovecot/conf.d/
 cp ./mail.mysql/10-mail.conf /etc/dovecot/conf.d/
 cp ./mail.mysql/10-master.conf /etc/dovecot/conf.d/
+cp ./mail.mysql/10-ssl.conf /etc/dovecot/conf.d/
 cp ./mail.mysql/auth-sql.conf.ext /etc/dovecot/conf.d/
 cp ./mail.mysql/auth-static.conf.ext /etc/dovecot/conf.d/
 

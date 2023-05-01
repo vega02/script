@@ -1,5 +1,5 @@
 user = dovecot
 password = dovecot
-hosts = 192.168.20.250
+hosts = localhost
 dbname = dovecot
 query = SELECT CONCAT(domain,'/',username,'/') FROM users WHERE username='%u' AND domain='%d' AND active='1'
