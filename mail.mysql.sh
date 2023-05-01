@@ -69,7 +69,8 @@ apt-get update \
   && touch /etc/fail2ban/jail.local \
   && touch /etc/postfix/mysql-email2email.cf \
   && touch /etc/postfix/mysql-virtual-alias-maps.cf \
-  && touch /etc/postfix/mysql-virtual-mailbox-domains.cf
+  && touch /etc/postfix/mysql-virtual-mailbox-domains.cf \
+  && touch /etc/postfix/mysql-virtual-mailbox-maps.cf \
 #postfix
 mv /etc/postfix/main.cf /etc/postfix/main.cf.old
 mv /etc/postfix/master.cf /etc/postfix/master.cf.old
@@ -90,6 +91,7 @@ cp ./mail.mysql/master.cf /etc/postfix/
 cp ./mail.mysql/mysql-email2email.cf /etc/postfix/
 cp ./mail.mysql/mysql-virtual-alias-maps.cf /etc/postfix/
 cp ./mail.mysql/mysql-virtual-mailbox-domains.cf /etc/postfix/
+cp ./mail.mysql/mysql-virtual-mailbox-maps.cf /etc/postfix/
 cp ./mail.mysql/smtpd.conf /etc/postfix/sasl/
 
 cp ./mail.mysql/saslauthd /etc/default/
