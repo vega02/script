@@ -71,7 +71,7 @@ driver = mysql
 #   connect = host=sql.example.com dbname=virtual user=virtual password=blarg
 #   connect = /etc/dovecot/authdb.sqlite
 #
-connect = host=localhost dbname=dovecot user=dovecot password=dovecot
+connect = host=127.0.0.1 dbname=dovecot user=dovecot password=dovecot
 #connect = host=192.168.20.250 dbname=dovecot user=dovecot password=dovecot
 
 # Default password scheme.
@@ -143,5 +143,5 @@ default_pass_scheme = MD5
 
 # Query to get a list of all usernames.
 #iterate_query = SELECT username AS user FROM users
-user_query = SELECT username, password,uid,gid FROM users WHERE username= '%n' AND domain ='%d' AND active='1'
-password_query = SELECT password FROM users WHERE username='%n' AND domain='%d' AND active='1'
+user_query = SELECT username, password,uid,gid FROM users WHERE username= '%n' AND domain ='%d' AND active=1
+password_query = SELECT password FROM users WHERE username='%n' AND domain='%d' AND active=1

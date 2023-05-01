@@ -1,5 +1,5 @@
 user = dovecot
 password = dovecot
-hosts = localhost
+hosts = 127.0.0.1
 dbname = dovecot
 query = SELECT destination FROM aliases WHERE source = '%s'
