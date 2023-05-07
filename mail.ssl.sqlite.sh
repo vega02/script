@@ -23,7 +23,7 @@ wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/10-master.c
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/10-ssl.conf
 
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/auth-sql.conf.ext
-wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/auth-static.conf.ext
+#wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/auth-static.conf.ext
 
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/main.cf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/master.cf
@@ -33,6 +33,7 @@ wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/mysql-virtu
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/mysql-virtual-mailbox-maps.cf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/sqlite-email2email.cf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/sqlite-virtual-alias-maps.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/sqlite-virtual-forwarding-maps.cf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/sqlite-virtual-mailbox-domains.cf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/sqlite-virtual-mailbox-maps.cf
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.mysql/smtpd.conf
@@ -64,7 +65,7 @@ apt-get update \
   && apt install -y tzdata \
   && dpkg-reconfigure --frontend noninteractive tzdata \
   && apt install -y certbot python3-certbot-apache \
-  && apt install -y mariadb-server \
+#  && apt install -y mariadb-server \
   && apt install -y mc \
   && groupadd -g 5000 vmail \
   && useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail \
@@ -72,14 +73,10 @@ apt-get update \
   && chown vmail:vmail /var/mail/vhosts \
   && touch /etc/postfix/sasl/smtpd.conf \
   && touch /etc/fail2ban/jail.local \
-  && touch /etc/postfix/mysql-email2email.cf \
-  && touch /etc/postfix/mysql-virtual-alias-maps.cf \
-  && touch /etc/postfix/mysql-virtual-mailbox-domains.cf \
-  && touch /etc/postfix/mysql-virtual-mailbox-maps.cf \
 #postfix
 mv /etc/postfix/main.cf /etc/postfix/main.cf.old
 mv /etc/postfix/master.cf /etc/postfix/master.cf.old
-mv /etc/default/saslauthd /etc/default/saslauthd.old
+#mv /etc/default/saslauthd /etc/default/saslauthd.old
 #dovecot
 mv /etc/dovecot/conf.d/10-auth.conf /etc/dovecot/conf.d/10-auth.conf.old
 mv /etc/dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf.old
@@ -90,7 +87,7 @@ cp ./mail.mysql/10-mail.conf /etc/dovecot/conf.d/
 cp ./mail.mysql/10-master.conf /etc/dovecot/conf.d/
 cp ./mail.mysql/10-ssl.conf /etc/dovecot/conf.d/
 cp ./mail.mysql/auth-sql.conf.ext /etc/dovecot/conf.d/
-cp ./mail.mysql/auth-static.conf.ext /etc/dovecot/conf.d/
+#cp ./mail.mysql/auth-static.conf.ext /etc/dovecot/conf.d/
 
 cp ./mail.mysql/main.cf /etc/postfix/
 cp ./mail.mysql/master.cf /etc/postfix/
@@ -100,6 +97,7 @@ cp ./mail.mysql/master.cf /etc/postfix/
 #cp ./mail.mysql/mysql-virtual-mailbox-maps.cf /etc/postfix/
 cp ./mail.mysql/sqlite-email2email.cf /etc/postfix/
 cp ./mail.mysql/sqlite-virtual-alias-maps.cf /etc/postfix/
+cp ./mail.mysql/sqlite-virtual-forwarding-maps.cf /etc/postfix/
 cp ./mail.mysql/sqlite-virtual-mailbox-domains.cf /etc/postfix/
 cp ./mail.mysql/sqlite-virtual-mailbox-maps.cf /etc/postfix/
 #cp ./mail.mysql/smtpd.conf /etc/postfix/sasl/
@@ -118,15 +116,12 @@ sqlite3 /etc/postfix/dovecot.db < ./mail.mysql/sqlite.init
 chmod 644 /etc/postfix/dovecot.db
 chown root:dovecot /etc/postfix/dovecot.db
 
-/etc/init.d/saslauthd restart
+#/etc/init.d/saslauthd restart
 /etc/init.d/postfix restart
 /etc/init.d/dovecot restart
-/etc/init.d/mariadb start
+#/etc/init.d/mariadb start
 
-mysql < ./mail.mysql/init.sql
-
-
-
+#mysql < ./mail.mysql/init.sql
 
 echo "phpmyadmin phpmyadmin/dbconfig-install boolean false" | debconf-set-selections
 echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections

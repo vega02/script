@@ -13,3 +13,11 @@ CREATE TABLE aliases (
     destination TEXT
 );
 INSERT INTO aliases (source,destination) VALUES ('vega2@ezconn.tw','vega@ezconn.tw');
+
+CREATE TABLE forwarding (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT,
+    forward_to TEXT
+);
+INSERT INTO forwarding (email,forward_to) VALUES ('vega@ezconn.tw','vega@ezconn.tw');
+INSERT INTO forwarding (email,forward_to) VALUES ('vega@ezconn.tw','vega@uvi.com.tw');
