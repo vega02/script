@@ -21,6 +21,9 @@ echo "alias aptc='apt-get clean'" >> ~/.bashrc;
 echo "alias apts='apt-cache search'" >> ~/.bashrc;
 echo "alias n='netstat -antl'" >> ~/.bashrc;
 echo "alias df='df -BMB'" >> ~/.bashrc;
+echo "alias re='/etc/init.d/postfix restart && /etc/init.d/dovecot restart && /etc/init.d/saslauthd restart'" >> ~/.bashrc
+echo "alias mlog='vi /var/log/mail.log'" >> ~/.bashrc \
+
 echo "TZ='Asia/Taipei'; export TZ" >> ~/.bashrc;
 echo "cd ~"
 

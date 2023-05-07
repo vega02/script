@@ -18,7 +18,7 @@ CREATE TABLE `users` (
   `gid` INT(11) DEFAULT '5000'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert  into `users`(`username`,`domain`,`password`,`active`) values ('vega','ezconn.tw','dfa20cc6b1e1b18e23b8f08616cde10d',1);
+insert  into `users`(`username`,`domain`,`password`,`active`) values ('vega','ezconn.tw','8253dee45bd36758d868cc8a45677521',1);
 
 CREATE USER 'dovecot'@'%' IDENTIFIED BY 'dovecot';
 GRANT ALL ON dovecot.* TO 'dovecot'@'%';

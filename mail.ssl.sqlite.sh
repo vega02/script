@@ -115,7 +115,7 @@ cp ./mail.mysql/jail.local /etc/fail2ban/
 #/usr/sbin/postmap /etc/postfix/rbl_whitelist
 
 sqlite3 /etc/postfix/dovecot.db < ./mail.mysql/sqlite.init
-chmod 640 /etc/postfix/dovecot.db
+chmod 644 /etc/postfix/dovecot.db
 chown root:dovecot /etc/postfix/dovecot.db
 
 /etc/init.d/saslauthd restart
