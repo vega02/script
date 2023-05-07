@@ -1,2 +1,2 @@
 dbpath = /etc/postfix/dovecot.db
-query = SELECT CONCAT(domain,'/',username,'/') FROM users WHERE username='%u' AND domain='%d' AND active=1
+query = SELECT domain || '/' || username || '/' FROM users WHERE username='%u' AND domain='%d' AND active=1

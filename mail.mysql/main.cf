@@ -65,5 +65,5 @@ virtual_gid_maps = static:5000
 #virtual_mailbox_domains = mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf
 #virtual_mailbox_maps = mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf
 virtual_alias_maps =  sqlite:/etc/postfix/sqlite-virtual-alias-maps.cf
-virtual_mailbox_domains = sqlite:/etc/postfix/sqlite-virtual-mailbox-domains.c
+virtual_mailbox_domains = sqlite:/etc/postfix/sqlite-virtual-mailbox-domains.cf
 virtual_mailbox_maps =  sqlite:/etc/postfix/sqlite-virtual-mailbox-maps.cf
