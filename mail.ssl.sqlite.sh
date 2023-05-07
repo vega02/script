@@ -71,7 +71,7 @@ apt-get update \
   && mkdir /var/mail/vhosts \
   && chown vmail:vmail /var/mail/vhosts \
   && touch /etc/postfix/sasl/smtpd.conf \
-  && touch /etc/fail2ban/jail.local \
+  && touch /etc/fail2ban/jail.local
 #postfix
 mv /etc/postfix/main.cf /etc/postfix/main.cf.old
 mv /etc/postfix/master.cf /etc/postfix/master.cf.old
