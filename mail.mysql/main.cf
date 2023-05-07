@@ -53,14 +53,17 @@ smtpd_tls_cert_file = /etc/letsencrypt/live/mail.${mydomain}/fullchain.pem
 smtpd_tls_key_file = /etc/letsencrypt/live/mail.${mydomain}/privkey.pem
 smtp_tls_CApath=/etc/letsencrypt/live/mail.${mydomain}
 home_mailbox=Maildir/
-virtual_mailbox_domains = mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf
-#virtual_transport = lmtp:unix:private/dovecot-lmtp
-virtual_alias_maps = mysql:/etc/postfix/mysql-virtual-alias-maps.cf,mysql:/etc/postfix/mysql-email2email.cf
-smtpd_sasl_auth_enable = yes
 
+smtpd_sasl_auth_enable = yes
 smtpd_sasl_type = dovecot
 smtpd_sasl_path = private/auth
 virtual_mailbox_base = /var/mail/vhosts
-virtual_mailbox_maps = mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf
 virtual_uid_maps = static:5000
 virtual_gid_maps = static:5000
+
+#virtual_alias_maps = mysql:/etc/postfix/mysql-virtual-alias-maps.cf,mysql:/etc/postfix/mysql-email2email.cf
+#virtual_mailbox_domains = mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf
+#virtual_mailbox_maps = mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf
+virtual_alias_maps =  sqlite:/etc/postfix/sqlite-virtual-alias-maps.cf
+virtual_mailbox_domains = sqlite:/etc/postfix/sqlite-virtual-mailbox-domains.c
+virtual_mailbox_maps =  sqlite:/etc/postfix/sqlite-virtual-mailbox-maps.cf

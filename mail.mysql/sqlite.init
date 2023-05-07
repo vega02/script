@@ -1,0 +1,15 @@
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT,
+    domain TEXT,
+                password TEXT,
+                active INTEGER
+);
+INSERT INTO users (username, domain,password,active) VALUES ('vega', 'ezconn.tw','8253dee45bd36758d868cc8a45677521',1);
+
+CREATE TABLE aliases (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    source TEXT,
+    destination TEXT
+);
+INSERT INTO aliases (source,destination) VALUES ('vega2@ezconn.tw','vega@ezconn.tw');
