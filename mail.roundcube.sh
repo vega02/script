@@ -58,11 +58,15 @@ apt-get update \
   && groupadd -g 5000 vmail \
   && useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail \
   && mkdir /var/mail/vhosts \
-  && chown vmail:vmail /var/mail/vhosts \
-  && touch /etc/fail2ban/jail.local \
-  && touch /etc/postfix/mysql-virtual-alias-maps.cf \
-  && touch /etc/postfix/mysql-virtual-mailbox-domains.cf \
-  && touch /etc/postfix/mysql-virtual-mailbox-maps.cf \
+  && chown vmail:vmail /var/mail/vhosts
+touch /etc/fail2ban/jail.local
+touch /etc/postfix/mysql-virtual-alias-maps.cf
+touch /etc/postfix/mysql-virtual-mailbox-domains.cf
+touch /etc/postfix/mysql-virtual-mailbox-maps.cf
+touch /var/log/mail.log
+touch /var/log/syslog
+chown 101:4 /var/log/mail.log
+chown 101:4 /var/log/syslog
 #postfix
 mv /etc/postfix/main.cf /etc/postfix/main.cf.old
 mv /etc/postfix/master.cf /etc/postfix/master.cf.old
@@ -105,6 +109,7 @@ echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf
 apt install -y php php-intl php-dom php-mbstring php-sqlite3
 #apt install -y phpmyadmin
 
+rsyslogd
 /etc/init.d/postfix restart
 /etc/init.d/dovecot restart
 /etc/init.d/fail2ban restart
