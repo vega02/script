@@ -16,7 +16,7 @@ mkdir fail2ban
 mkdir etc
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/init.sql
 wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/sqlite.init
-
+wget https://github.com/roundcube/roundcubemail/releases/download/1.6.0/roundcubemail-1.6.0-complete.tar.gz
 cd dovecot
 wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/10-auth.conf
 wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/10-mail.conf
