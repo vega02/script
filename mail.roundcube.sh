@@ -114,6 +114,15 @@ echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf
 apt install -y php php-intl php-dom php-mbstring php-sqlite3
 #apt install -y phpmyadmin
 
+tar xvf roundcubemail-1.6.0-complete.tar.gz
+cp -r roundcubemail-1.6.0/. /var/www/html/
+cp ./roundcube/config.inc.php /var/www/html/config/
+chown -R www-data:www-data /var/www/html/.
+mkdir /opt/roundcube \
+chown -R www-data:www-data /opt/roundcube
+rm /app/roundcubemail-1.6.0-complete.tar.gz
+rm -R /var/www/html/installer
+
 rsyslogd
 /etc/init.d/postfix restart
 /etc/init.d/dovecot restart
