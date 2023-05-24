@@ -1,0 +1,2 @@
+dbpath = /etc/postfix/dovecot.db
+query = SELECT domain || '/' || username || '/' FROM users WHERE username='%u' AND domain='%d' AND active=1

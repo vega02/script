@@ -10,37 +10,41 @@ cd ~/package
 
 mkdir mail.roundcube
 cd mail.roundcube
-
+mkdir dovecot
+mkdir postfix
+mkdir fail2ban
+mkdir etc
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/init.sql
 wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/sqlite.init
 
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/10-auth.conf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/10-mail.conf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/10-master.conf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/10-ssl.conf
+cd dovecot
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/10-auth.conf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/10-mail.conf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/10-master.conf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/10-ssl.conf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/dovecot-sql.conf.ext
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/auth-sql.conf.ext
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/auth-static.conf.ext
 
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot-sql.conf.ext
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/auth-sql.conf.ext
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/auth-static.conf.ext
+cd ../postfix
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/main.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/master.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/sqlite-virtual-alias-maps.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/sqlite-virtual-forwarding-maps.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/sqlite-virtual-mailbox-domains.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/sqlite-virtual-mailbox-maps.cf
 
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/main.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/master.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/mysql-email2email.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/mysql-virtual-alias-maps.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/mysql-virtual-mailbox-domains.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/mysql-virtual-mailbox-maps.cf
-
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/jail.local
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/mailname
-
+cd ../fail2ban
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/fail2ban/jail.local
+cd ../etc
+wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/etc/mailname
+cd ..
 
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/mime_header_checks
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/header_checks
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/body_checks
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/client_checks
 #wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/rbl_whitelist
-
-cd ..
 
 apt-get update \
   && apt install -y rsyslog vim net-tools iptables \
@@ -74,19 +78,19 @@ mv /etc/postfix/master.cf /etc/postfix/master.cf.old
 mv /etc/dovecot/conf.d/10-auth.conf /etc/dovecot/conf.d/10-auth.conf.old
 mv /etc/dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf.old
 
-cp ./mail.roundcube/dovecot-sql.conf.ext /etc/dovecot/
-cp ./mail.roundcube/10-auth.conf /etc/dovecot/conf.d/
-cp ./mail.roundcube/10-mail.conf /etc/dovecot/conf.d/
-cp ./mail.roundcube/10-master.conf /etc/dovecot/conf.d/
-cp ./mail.roundcube/10-ssl.conf /etc/dovecot/conf.d/
-cp ./mail.roundcube/auth-sql.conf.ext /etc/dovecot/conf.d/
-cp ./mail.roundcube/auth-static.conf.ext /etc/dovecot/conf.d/
+cp ./mail.roundcube/dovecot/dovecot-sql.conf.ext /etc/dovecot/
+cp ./mail.roundcube/dovecot/10-auth.conf /etc/dovecot/conf.d/
+cp ./mail.roundcube/dovecot/10-mail.conf /etc/dovecot/conf.d/
+cp ./mail.roundcube/dovecot/10-master.conf /etc/dovecot/conf.d/
+cp ./mail.roundcube/dovecot/10-ssl.conf /etc/dovecot/conf.d/
+cp ./mail.roundcube/dovecot/auth-sql.conf.ext /etc/dovecot/conf.d/
 
-cp ./mail.roundcube/main.cf /etc/postfix/
-cp ./mail.roundcube/master.cf /etc/postfix/
-cp ./mail.roundcube/mysql-virtual-alias-maps.cf /etc/postfix/
-cp ./mail.roundcube/mysql-virtual-mailbox-domains.cf /etc/postfix/
-cp ./mail.roundcube/mysql-virtual-mailbox-maps.cf /etc/postfix/
+cp ./mail.roundcube/postfix/main.cf /etc/postfix/
+cp ./mail.roundcube/postfix/master.cf /etc/postfix/
+cp ./mail.roundcube/postfix/sqlite-virtual-alias-maps.cf /etc/postfix/
+cp ./mail.roundcube/postfix/sqlite-virtual-forwarding-maps.cf /etc/postfix/
+cp ./mail.roundcube/postfix/sqlite-virtual-mailbox-domains.cf /etc/postfix/
+cp ./mail.roundcube/postfix/sqlite-virtual-mailbox-maps.cf /etc/postfix/
 
 cp ./mail.roundcube/jail.local /etc/fail2ban/
 cp ./mail.roundcube/mailname /etc/
@@ -96,8 +100,6 @@ cp ./mail.roundcube/mailname /etc/
 #cp ./mail.roundcube/client_checks /etc/postfix/
 #cp ./mail.roundcube/rbl_whitelist /etc/postfix/
 #/usr/sbin/postmap /etc/postfix/rbl_whitelist
-
-
 
 #/etc/init.d/mariadb start
 

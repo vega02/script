@@ -1,0 +1,2 @@
+dbpath = /etc/postfix/dovecot.db
+query = SELECT destination FROM aliases WHERE source = '%s'
