@@ -78,22 +78,22 @@ mv /etc/postfix/master.cf /etc/postfix/master.cf.old
 mv /etc/dovecot/conf.d/10-auth.conf /etc/dovecot/conf.d/10-auth.conf.old
 mv /etc/dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf.old
 
-cp ./mail.roundcube/dovecot/dovecot-sql.conf.ext /etc/dovecot/
-cp ./mail.roundcube/dovecot/10-auth.conf /etc/dovecot/conf.d/
-cp ./mail.roundcube/dovecot/10-mail.conf /etc/dovecot/conf.d/
-cp ./mail.roundcube/dovecot/10-master.conf /etc/dovecot/conf.d/
-cp ./mail.roundcube/dovecot/10-ssl.conf /etc/dovecot/conf.d/
-cp ./mail.roundcube/dovecot/auth-sql.conf.ext /etc/dovecot/conf.d/
+cp ./dovecot/dovecot-sql.conf.ext /etc/dovecot/
+cp ./dovecot/10-auth.conf /etc/dovecot/conf.d/
+cp ./dovecot/10-mail.conf /etc/dovecot/conf.d/
+cp ./dovecot/10-master.conf /etc/dovecot/conf.d/
+cp ./dovecot/10-ssl.conf /etc/dovecot/conf.d/
+cp ./dovecot/auth-sql.conf.ext /etc/dovecot/conf.d/
 
-cp ./mail.roundcube/postfix/main.cf /etc/postfix/
-cp ./mail.roundcube/postfix/master.cf /etc/postfix/
-cp ./mail.roundcube/postfix/sqlite-virtual-alias-maps.cf /etc/postfix/
-cp ./mail.roundcube/postfix/sqlite-virtual-forwarding-maps.cf /etc/postfix/
-cp ./mail.roundcube/postfix/sqlite-virtual-mailbox-domains.cf /etc/postfix/
-cp ./mail.roundcube/postfix/sqlite-virtual-mailbox-maps.cf /etc/postfix/
+cp ./postfix/main.cf /etc/postfix/
+cp ./postfix/master.cf /etc/postfix/
+cp ./postfix/sqlite-virtual-alias-maps.cf /etc/postfix/
+cp ./postfix/sqlite-virtual-forwarding-maps.cf /etc/postfix/
+cp ./postfix/sqlite-virtual-mailbox-domains.cf /etc/postfix/
+cp ./postfix/sqlite-virtual-mailbox-maps.cf /etc/postfix/
 
-cp ./mail.roundcube/jail.local /etc/fail2ban/
-cp ./mail.roundcube/mailname /etc/
+cp ./fail2ban/jail.local /etc/fail2ban/
+cp ./etc/mailname /etc/
 
 #cp ./mail.roundcube/mime_header_checks /etc/postfix/
 #cp ./mail.roundcube/header_checks /etc/postfix/
