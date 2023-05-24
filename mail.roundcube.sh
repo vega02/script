@@ -63,14 +63,17 @@ apt-get update \
   && useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail \
   && mkdir /var/mail/vhosts \
   && chown vmail:vmail /var/mail/vhosts
-touch /etc/fail2ban/jail.local
-touch /etc/postfix/mysql-virtual-alias-maps.cf
-touch /etc/postfix/mysql-virtual-mailbox-domains.cf
-touch /etc/postfix/mysql-virtual-mailbox-maps.cf
+#touch /etc/fail2ban/jail.local
+#touch /etc/postfix/sqlite-virtual-alias-maps.cf
+#touch /etc/postfix/sqlite-virtual-forwarding-maps.cf
+#touch /etc/postfix/sqlite-virtual-mailbox-domains.cf
+#touch /etc/postfix/sqlite-virtual-mailbox-maps.cf
+
 touch /var/log/mail.log
 touch /var/log/syslog
 chown 101:4 /var/log/mail.log
 chown 101:4 /var/log/syslog
+
 #postfix
 mv /etc/postfix/main.cf /etc/postfix/main.cf.old
 mv /etc/postfix/master.cf /etc/postfix/master.cf.old
