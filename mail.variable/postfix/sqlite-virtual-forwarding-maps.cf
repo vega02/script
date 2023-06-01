@@ -1,0 +1,2 @@
+dbpath = /var/mail/sqlite/mail.db
+query = SELECT forward_to FROM forwarding WHERE email = '%s'

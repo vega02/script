@@ -1,0 +1,2 @@
+dbpath = /var/mail/sqlite/mail.db
+query = SELECT 1 FROM users WHERE domain = '%s'

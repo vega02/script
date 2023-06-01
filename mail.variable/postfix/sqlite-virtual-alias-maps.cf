@@ -1,0 +1,2 @@
+dbpath = /var/mail/sqlite/mail.db
+query = SELECT destination FROM aliases WHERE source = '%s'
