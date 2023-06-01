@@ -48,7 +48,7 @@ apt-get update \
   && groupadd -g 5000 vmail \
   && useradd -u 5000 -g vmail -s /usr/bin/nologin -d /home/vmail -m vmail \
   && mkdir /var/mail/vhosts \
-  && chown vmail:vmail /var/mail/vhosts
+  && chown vmail:vmail /var/mail/vhosts \
 	&& mkdir /var/mail/sqlite \
   && rm /var/www/html/index.html
   
