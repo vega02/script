@@ -12,25 +12,25 @@ mkdir mail.variable
 cd mail.variable
 mkdir dovecot
 mkdir postfix
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/startup.sh
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/startup.sh
 chmod 755 startup.sh
-#wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/init.sql
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/sqlite/sqlite.init
+#wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/init.sql
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/sqlite/sqlite.init
 wget https://github.com/roundcube/roundcubemail/releases/download/1.6.0/roundcubemail-1.6.0-complete.tar.gz
 
 cd dovecot
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/dovecot/10-master.conf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/dovecot/10-master.conf
 
 cd ../postfix
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/main.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/master.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/sqlite-virtual-alias-maps.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/sqlite-virtual-forwarding-maps.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/sqlite-virtual-mailbox-domains.cf
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/postfix/sqlite-virtual-mailbox-maps.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/postfix/main.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/postfix/master.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/postfix/sqlite-virtual-alias-maps.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/postfix/sqlite-virtual-forwarding-maps.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/postfix/sqlite-virtual-mailbox-domains.cf
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/postfix/sqlite-virtual-mailbox-maps.cf
 
 cd ../roundcube
-wget https://raw.githubusercontent.com/vega02/script/main/mail.roundcube/roundcube/config.inc.php
+wget https://raw.githubusercontent.com/vega02/script/main/mail.variable/roundcube/config.inc.php
 
 cd ..
 
