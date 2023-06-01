@@ -40,7 +40,7 @@ apt-get update \
   && dpkg-reconfigure --frontend noninteractive tzdata \
   && echo "postfix postfix/mailname string example.com" | debconf-set-selections \
   && echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
-	&& apt install -y postfix fail2ban \
+  && apt install -y postfix fail2ban \
   && apt install -y dovecot-core dovecot-imapd dovecot-pop3d procmail \
   && apt install -y sqlite3 postfix-sqlite dovecot-sqlite \
   && apt install -y rsyslog vim net-tools iptables mc wget \
