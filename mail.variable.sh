@@ -8,6 +8,8 @@ then
 fi
 cd ~/package
 
+wget -O - https://raw.githubusercontent.com/vega02/script/main/init_bashrc.sh
+
 mkdir mail.variable
 cd mail.variable
 mkdir dovecot
