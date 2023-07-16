@@ -23,7 +23,7 @@ echo "alias n='netstat -antl'" >> ~/.bashrc;
 echo "alias df='df -BMB'" >> ~/.bashrc;
 echo "alias re='/etc/init.d/postfix restart && /etc/init.d/dovecot restart && /etc/init.d/saslauthd restart'" >> ~/.bashrc
 echo "alias mlog='vi /var/log/mail.log'" >> ~/.bashrc \
-
+echo "alias temp='cat /sys/class/thermal/thermal_zone*/temp'" \
 echo "TZ='Asia/Taipei'; export TZ" >> ~/.bashrc;
 echo "cd ~"
 
