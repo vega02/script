@@ -4,19 +4,29 @@ USE `dovecot`;
 
 DROP TABLE IF EXISTS `aliases`;
 CREATE TABLE `aliases` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `source` varchar(255) NOT NULL,
-  `destination` varchar(255) NOT NULL
+  `destination` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(128) NOT NULL,
   `domain` varchar(128) NOT NULL,
   `password` varchar(64) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1,
-  `uid` INT(11) DEFAULT '5000',
-  `gid` INT(11) DEFAULT '5000'
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `forwarding`;
+CREATE TABLE `forwarding` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `email` varchar(256),
+    `forward_to` varchar(256),
+    PRIMARY KEY (`id`)
+);
 
 insert  into `users`(`username`,`domain`,`password`,`active`) values ('vega','ezconn.tw','8253dee45bd36758d868cc8a45677521',1);
 
